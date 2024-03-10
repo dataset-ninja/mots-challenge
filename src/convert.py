@@ -68,11 +68,10 @@ def convert_and_upload_supervisely_project(
 
         return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=[seq])
 
-    car = sly.ObjClass("car", sly.Polygon)
     pedestrian = sly.ObjClass("pedestrian", sly.Polygon)
     ignore = sly.ObjClass("ignore region", sly.Polygon)
 
-    idx_to_class = {"1": car, "2": pedestrian, "10": ignore}
+    idx_to_class = {"2": pedestrian, "10": ignore}
 
     identity_meta = sly.TagMeta("class id", sly.TagValueType.ANY_NUMBER)
     seq_meta = sly.TagMeta("sequence", sly.TagValueType.ANY_STRING)

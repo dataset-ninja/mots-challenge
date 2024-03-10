@@ -1,11 +1,12 @@
 If you make use of the MOTSChallenge data, please cite the following reference:
 
 ``` bibtex 
-@dataset{MOTSChallenge,
-  author={Paul Voigtlaender and Michael Krause and Aljosa Osep and Jonathon Luiten and Berin Balachandar and Gnana Sekar and Andreas Geiger and Bastian Leibe},
-  title={MOTSChallenge Dataset},
-  year={2019},
-  url={https://www.vision.rwth-aachen.de/page/mots}
+@inproceedings{Voigtlaender19CVPR_MOTS,
+  author = {Paul Voigtlaender and Michael Krause and Aljo\u{s}a O\u{s}ep and Jonathon Luiten
+           and Berin Balachandar Gnana Sekar and Andreas Geiger and Bastian Leibe},
+  title = {{MOTS}: Multi-Object Tracking and Segmentation},
+  booktitle = {CVPR},
+  year = {2019},
 }
 ```
 

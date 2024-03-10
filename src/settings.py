@@ -53,8 +53,7 @@ DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = (
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
 CLASS2COLOR: Optional[Dict[str, List[str]] or Literal["predefined"]] = {
-    "car": [230, 25, 75],
-    "pedestrian": [60, 180, 75],
+    "pedestrian": [230, 25, 75],
     "ignore region": [255, 225, 25],
 }
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
