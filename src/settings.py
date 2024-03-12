@@ -39,7 +39,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://www.vision.rwth-aachen.de/page/mots"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 15153541
+PREVIEW_IMAGE_ID: int = 15407581
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/mots-challenge"
@@ -62,7 +62,7 @@ CLASS2COLOR: Optional[Dict[str, List[str]] or Literal["predefined"]] = {
 # If you have more than the one paper, put the most relatable link as the first element of the list
 # Use dict key to specify name for a button
 PAPER: Optional[Union[str, List[str], Dict[str, str]]] = (
-    "https://www.vision.rwth-aachen.de/media/papers/mots-multi-object-tracking-and-segmentation/MOTS"
+    "https://www.vision.rwth-aachen.de/media/papers/mots-multi-object-tracking-and-segmentation/MOTS.pdf"
 )
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
 REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
