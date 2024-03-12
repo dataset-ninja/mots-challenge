@@ -27,17 +27,69 @@ To convert bounding boxes into segmentation masks, the authors employed a fully 
 The authors further annotated 4 of 7 sequences of the [MOTChallenge 2017](https://motchallenge.net/data/MOT17/) training dataset and obtained the MOTSChallenge dataset. MOTSChallenge focuses on pedestrians in crowded scenes and is very challenging due to many occlusion cases, for which a pixel-wise
 description is especially beneficial.
 
-|                | KITTI   | MOTS  | MOTSChallenge |
-|----------------|---------|-------|---------------|
-|                | train   | val   | train         |
-| Sequences      | 12      | 9     | 4             |
-| Frames         | 5,027   | 2,981 | 2,862         |
-| Tracks Pedestrian | 99   | 68    | 228           |
-| Masks Pedestrian Total | 8,073 | 3,347 | 26,894  |
-| Manually annotated    | 1,312 | 647   | 3,930     |
-| Tracks Car     | 431     | 151   | -             |
-| Masks Car Total | 18,831 | 8,068 | -             |
-| Manually annotated    | 1,509 | 593   | -          |
+<table>
+  <tr>
+    <th></th>
+    <th colspan="2">KITTI and MOTS</th>
+    <th>MOTSChallenge</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>train</td>
+    <td>val</td>
+    <td>train</td>
+  </tr>
+  <tr>
+    <td>Sequences</td>
+    <td>12</td>
+    <td>9</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Frames</td>
+    <td>5,027</td>
+    <td>2,981</td>
+    <td>2,862</td>
+  </tr>
+  <tr>
+    <td>Tracks Pedestrian</td>
+    <td>99</td>
+    <td>68</td>
+    <td>228</td>
+  </tr>
+  <tr>
+    <td>Masks Pedestrian Total</td>
+    <td>8,073</td>
+    <td>3,347</td>
+    <td>26,894</td>
+  </tr>
+  <tr>
+    <td>Manually annotated</td>
+    <td>1,312</td>
+    <td>647</td>
+    <td>3,930</td>
+  </tr>
+  <tr>
+    <td>Tracks Car</td>
+    <td>431</td>
+    <td>151</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Masks Car Total</td>
+    <td>18,831</td>
+    <td>18,06851</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Manually annotated</td>
+    <td>1,509</td>
+    <td>593</td>
+    <td>-</td>
+  </tr>
+
+</table>
 
 <span style="font-size: smaller; font-style: italic;">Statistics of the Introduced KITTI MOTS and MOTSChallenge Datasets.</span>
+
 

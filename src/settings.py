@@ -28,6 +28,7 @@ CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
     CVTask.SemanticSegmentation(),
     CVTask.ObjectDetection(),
+    CVTask.Identification(),
 ]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.InstanceSegmentation()]
 
@@ -88,11 +89,13 @@ AUTHORS_CONTACTS: Optional[List[str]] = [
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
     "RWTH Aachen University, Germany",
-    "MPI for Intelligent Systems and University of Tubingen, Germany",
+    "Max Plank Institute for Intelligent Systems, Germany",
+    "University of Tubingen, Germany",
 ]
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "https://www.rwth-aachen.de/",
     "https://is.mpg.de/",
+    "https://uni-tuebingen.de/en/",
 ]
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
@@ -101,7 +104,7 @@ SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
 }
 TAGS: Optional[
     List[Literal["multi-view", "synthetic", "simulation", "multi-camera", "multi-modal"]]
-] = None
+] = ["multi-object-tracking"]
 
 
 SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = None

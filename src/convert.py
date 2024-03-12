@@ -52,9 +52,16 @@ def convert_and_upload_supervisely_project(
 
         ann_data = im_name_to_data[get_file_name_with_ext(image_path)]
         for curr_ann_data in ann_data:
+            l_tags = []
             obj_class = idx_to_class.get(curr_ann_data[1])
             if obj_class is not None:
-                tag = sly.Tag(identity_meta, value=int(curr_ann_data[0]))
+                identity_value = int(curr_ann_data[0])
+                if identity_value != 10000:
+                    tag = sly.Tag(identity_meta, value=identity_value)
+                    l_tags.append(tag)
+                    instance_value = int(curr_ann_data[0][1:])
+                    instance = sly.Tag(instance_meta, value=instance_value)
+                    l_tags.append(instance)
 
                 rle_mask_data = {
                     "size": [image_np.shape[0], image_np.shape[1]],
@@ -63,23 +70,26 @@ def convert_and_upload_supervisely_project(
                 polygons = convert_rle_mask_to_polygon(rle_mask_data)
                 for polygon in polygons:
                     if polygon.area > 35:
-                        label = sly.Label(polygon, obj_class, tags=[tag])
+                        label = sly.Label(polygon, obj_class, tags=l_tags)
                         labels.append(label)
+                        label_r = sly.Label(polygon.to_bbox(), obj_class, tags=l_tags)
+                        labels.append(label_r)
 
         return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=[seq])
 
-    pedestrian = sly.ObjClass("pedestrian", sly.Polygon)
-    ignore = sly.ObjClass("ignore region", sly.Polygon)
+    pedestrian = sly.ObjClass("pedestrian", sly.AnyGeometry)
+    ignore = sly.ObjClass("ignore region", sly.AnyGeometry)
 
     idx_to_class = {"2": pedestrian, "10": ignore}
 
-    identity_meta = sly.TagMeta("class id", sly.TagValueType.ANY_NUMBER)
+    identity_meta = sly.TagMeta("object id", sly.TagValueType.ANY_NUMBER)
+    instance_meta = sly.TagMeta("instance id", sly.TagValueType.ANY_NUMBER)
     seq_meta = sly.TagMeta("sequence", sly.TagValueType.ANY_STRING)
 
     project = api.project.create(workspace_id, project_name, change_name_if_conflict=True)
     meta = sly.ProjectMeta(
-        obj_classes=[pedestrian, car, ignore],
-        tag_metas=[identity_meta, seq_meta],
+        obj_classes=[pedestrian, ignore],
+        tag_metas=[identity_meta, seq_meta, instance_meta],
     )
     api.project.update_meta(project.id, meta.to_json())
 
