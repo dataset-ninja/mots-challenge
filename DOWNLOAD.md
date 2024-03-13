@@ -1,6 +1,6 @@
 Dataset **MOTSChallenge** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](Set 'HIDE_DATASET=False' to generate download link)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/b/k/TO/Hq6LAMxBSk4V34bfdXCLEwV5JhruKWdmf7JD9vsQfqTa53kteOkURjsMXChKO7Jix5InUi3IdhELRrcWEkw8Vyvy8MIhU4K9OIhY3GTMgyTUax1lgvqEEDjUvWnC.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
